@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 import inquirer from "inquirer";
 const Computerguessednumber = Math.floor(Math.random() * 5 + 1);
 const userguessed = await inquirer.prompt([
