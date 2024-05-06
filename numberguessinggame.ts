@@ -2,6 +2,18 @@
 import inquirer from "inquirer";
 
 const Computerguessednumber = Math.floor(Math.random()*5+1)
+
+let isrunning:boolean=true
+
+while (isrunning){
+    let game=await inquirer.prompt([{
+        name: "game",
+        type: "list",
+        message :"Select What Do You Want To Do",
+        choices:["Start Game","Quit Game"]
+    }])
+    if(game.game==="Start Game"){
+
 const userguessed = await inquirer.prompt([
     {
         name: "UserGuessedNumber",
@@ -15,4 +27,8 @@ if(userguessed.UserGuessedNumber==Computerguessednumber){
 }else{
     console.log("You Have Guessed Wrong Number")
 }
-
+}
+if (game.game==="Quit Game"){
+    isrunning =false
+}
+}
