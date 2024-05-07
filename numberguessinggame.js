@@ -1,6 +1,5 @@
 #! /usr/bin/env node
 import inquirer from "inquirer";
-const Computerguessednumber = Math.floor(Math.random() * 5 + 1);
 let isrunning = true;
 while (isrunning) {
     let game = await inquirer.prompt([{
@@ -10,6 +9,7 @@ while (isrunning) {
             choices: ["Start Game", "Quit Game"]
         }]);
     if (game.game === "Start Game") {
+        const Computerguessednumber = Math.floor(Math.random() * 5 + 1);
         const userguessed = await inquirer.prompt([
             {
                 name: "UserGuessedNumber",
@@ -24,7 +24,7 @@ while (isrunning) {
             console.log("You Have Guessed Wrong Number");
         }
     }
-    if (game.game === "Quit Game") {
+    else if (game.game === "Quit Game") {
         isrunning = false;
     }
 }
